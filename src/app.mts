@@ -5,26 +5,23 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose, { connection } from 'mongoose';
 
+//graphql
+const{ApolloServer,gql} = require ('apollo-server');
+const typeDefs = require('../src/graphql/schema.js');
+const resolvers = require('../src/graphql/resolvers.js');
+const server = new ApolloServer({typeDefs,resolvers});
+
+const usersMockDb = require('../src/graphql/mockdb.js'); //borrar posteriormente
 
 //routes
-
 import { router as userRouter } from './mongodb/routes/user.router.mjs';
-
-
-
-
 
 
 
 dotenv.config();
 
 
-
-
-
-
 //conectar a la base de datos MongoDb
-
 const MongoDB_Connection_String = 'mongodb+srv://rsannarain:rsannarain@cluster0.hikbp2g.mongodb.net/';
 
 async function connectToMongoDb(connectionString : string){
@@ -55,3 +52,5 @@ app.get('/',(req,res)=>{
 app.listen(PORT,() => {
     console.log(`La aplicacion se esta ejecutando en el puerto ${PORT}`);
 });
+
+
