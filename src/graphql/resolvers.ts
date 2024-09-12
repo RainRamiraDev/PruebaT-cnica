@@ -1,14 +1,10 @@
-import { Query } from "mongoose"
-
-const users = require('../graphql/mockdb.js');
 
 
-const resolvers = () =>{
-    return{
+import { users } from '../graphql/mockdb.js';
+
+export const resolvers ={
         Query:{
-            users:() => users
-        },
-    };
-}
+            users:()=>users,
+    },
+};
 
-exports.resolvers = resolvers;

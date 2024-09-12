@@ -5,13 +5,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose, { connection } from 'mongoose';
 
-//graphql
-const{ApolloServer,gql} = require ('apollo-server');
-const typeDefs = require('../src/graphql/schema.js');
-const resolvers = require('../src/graphql/resolvers.js');
-const server = new ApolloServer({typeDefs,resolvers});
-
-const usersMockDb = require('../src/graphql/mockdb.js'); //borrar posteriormente
 
 //routes
 import { router as userRouter } from './mongodb/routes/user.router.mjs';
@@ -54,3 +47,58 @@ app.listen(PORT,() => {
 });
 
 
+
+//apollo server y graphql-------------------------------------------------------------------------------------------
+
+import { ApolloServer, gql } from 'apollo-server';
+
+
+// const typeDefs = require ('./graphql/schema.js').typeDefs();
+// const resolvers = require('./graphql/resolvers.js').resolvers();
+
+import { resolvers } from './graphql/resolvers.js';
+import { typeDefs } from './graphql/schema.js';
+
+
+//mockDb
+// const users =[{
+//     ID:1,
+//     name:'Rain Ramira',
+//     email:'r.sannarain@gmail.com',
+//     password:'123'
+// },{
+//     ID:2,
+//     name:'Lionel Messi',
+//     email:'l.messi@gmail.com',
+//     password:'321'
+// }];
+
+
+//typedefs
+
+// const typeDefs = gql`
+//     type User{
+//         ID:Int!
+//         name:String
+//         email:String
+//         password:String
+//     }
+    
+//     type Query{
+//         users:[User]
+//     }
+// `;
+
+
+//resolvers
+
+// const resolvers ={Query:{users:()=>users}};
+   
+
+//instanse of the server
+
+const server = new ApolloServer({typeDefs,resolvers});
+
+server.listen().then(({url} : {url : String}) => {
+    console.log(`Servidor graphql corriendo en el puerto ${url}`);
+});

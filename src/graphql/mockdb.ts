@@ -1,10 +1,13 @@
-const users = () => {
-    return [{
+export const users =[{
         ID:1,
-        name:'Rain',
-        main:'r4yn1138@gmail.com',
+        name:'Rain Ramira',
+        email:'r.sannarain@gmail.com',
         password:'123'
-    }];
-}
+    },{
+        ID:2,
+        name:'Lionel Messi',
+        email:'l.messi@gmail.com',
+        password:'321'
+    },
+];
 
-exports.users = users;
