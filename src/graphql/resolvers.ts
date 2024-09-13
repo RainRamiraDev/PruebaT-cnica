@@ -1,10 +1,53 @@
 
 
-import { users } from '../graphql/mockdb.js';
+import  User  from '../graphql/user.js';
+
+interface UserArgs {
+    ID: string;
+  }
+  
+  interface UserInput {
+    name: string;
+    email: string;
+    password: string;
+  }
+  
+  interface CreateUserArgs {
+    UserInput: UserInput;
+  }
+  
+  interface UpdateUserArgs {
+    ID: string;
+    UserInput: UserInput;
+  }
+  
+  interface DeleteUserArgs {
+    ID: string;
+  }
 
 export const resolvers ={
-        Query:{
-            users:()=>users,
+    Query:{
+        async getUser(_: any,{ ID }:UserArgs){
+            return await User.findById(ID);
+        },
+
+        async getUsers(_ : any,{ limit }:{ limit? :number }){
+            return await User.find().limit( limit || 0 ); 
+        }
     },
+    Mutation:{
+        async createUser(_: any, { UserInput }: CreateUserArgs) {
+            const res = await new User(UserInput).save();
+            return res._id.toString();
+          },
+          async updateUser(_: any, { ID, UserInput }: UpdateUserArgs) {
+            await User.updateOne({ _id: ID }, { $set: UserInput });
+            return ID;
+          },
+          async deleteUser(_: any, { ID }: DeleteUserArgs) {
+            await User.deleteOne({ _id: ID });
+            return ID;
+          },
+    }
 };
 
