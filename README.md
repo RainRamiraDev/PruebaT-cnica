@@ -46,3 +46,60 @@ tecnologías realizar un crud de usuario con campos ID, nombre, email, password.
 3. **Ejecutar el proyecto**
    ```bash
    npm run start
+
+## Prueba en Apollo-Server
+```
+[================GET USER (BY ID)====================================]
+
+
+query {
+  getUser(ID: "60c72b2f9b1e4d001c9e7b9e") {
+    _id
+    name
+    email
+  }
+}
+
+
+[=================GET USERS (ALL)===================================]
+
+
+query {
+  getUsers(limit: 5) {
+    _id
+    name
+    email
+  }
+}
+
+
+[=====================CREATE USER==================================]
+
+
+ mutation {
+  createUser(UserInput: {
+    name: "Oscar Botta",
+    email: "o.botta@gmail.com",
+    password: "12345"
+  })
+}
+
+
+[===================DELETE USER=================================]
+
+
+mutation {
+  deleteUser(ID: "60c72b2f9b1e4d001c9e7b9e")
+}
+
+
+[==================UPDATE USER===================================]
+
+
+mutation {
+  updateUser(ID: "60c72b2f9b1e4d001c9e7b9e", UserInput: {
+    name: "Rain Ramira",
+    email: "r.sannarain@gmail.com",
+    password: "newpassword123"
+  })
+}
