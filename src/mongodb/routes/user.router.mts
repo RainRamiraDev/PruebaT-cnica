@@ -4,7 +4,6 @@ const router = express.Router();
 
 import { User } from '../models/user.model.mjs';
 
-//get all Users
 
 router.get('/getUsers',async (req,res) => {
     try{
@@ -17,7 +16,6 @@ router.get('/getUsers',async (req,res) => {
     }
 });
 
-//post User
 
 router.post('/addUser',async (req,res) =>{
     try{
@@ -29,7 +27,6 @@ router.post('/addUser',async (req,res) =>{
     }
 });
 
-//get a User by Id
 router.get('/:id',async (req,res) =>{
     try{
         const data = await User.findById(req.params.id);

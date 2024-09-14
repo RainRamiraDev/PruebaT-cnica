@@ -1,29 +1,7 @@
 
 
-import  User  from '../graphql/user.js';
-
-interface UserArgs {
-    ID: string;
-  }
-  
-  interface UserInput {
-    name: string;
-    email: string;
-    password: string;
-  }
-  
-  interface CreateUserArgs {
-    UserInput: UserInput;
-  }
-  
-  interface UpdateUserArgs {
-    ID: string;
-    UserInput: UserInput;
-  }
-  
-  interface DeleteUserArgs {
-    ID: string;
-  }
+import  User  from './user.js';
+import { UserArgs, UserInput, CreateUserArgs, UpdateUserArgs, DeleteUserArgs } from '../features/interfaces.js';
 
 export const resolvers ={
     Query:{

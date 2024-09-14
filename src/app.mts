@@ -6,15 +6,11 @@ import dotenv from 'dotenv';
 import mongoose, { connection } from 'mongoose';
 
 
-//routes
 import { router as userRouter } from './mongodb/routes/user.router.mjs';
 
 
 
 dotenv.config();
-
-
-
 
 const PORT = 3000;
 
@@ -36,7 +32,6 @@ app.listen(PORT,() => {
 
 
 
-//conectar a la base de datos MongoDb
 const MongoDB_Connection_String = 'mongodb+srv://rsannarain:rsannarain@cluster0.hikbp2g.mongodb.net/';
 
 async function connectToMongoDb(connectionString : string){
@@ -51,12 +46,9 @@ try{
 }
 
 
-
-//apollo server y graphql-------------------------------------------------------------------------------------------
-
 import { ApolloServer, gql } from 'apollo-server';
-import { resolvers } from './graphql/resolvers.js';
-import { typeDefs } from './graphql/schema.js';
+import { resolvers } from './features/user.resolvers.js';
+import { typeDefs } from './features/user.schema.js';
 
 
 const server = new ApolloServer({typeDefs,resolvers});
