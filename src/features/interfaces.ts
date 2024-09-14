@@ -1,4 +1,6 @@
 
+import {Types} from 'mongoose';
+
  export interface UserArgs {
     ID: string;
   }
@@ -21,3 +23,10 @@
  export interface DeleteUserArgs {
     ID: string;
   }
+
+export interface IUser {
+    _id?: Types.ObjectId;
+    name?:String,
+    email?:String,
+    password?:String
+}
