@@ -57,8 +57,8 @@ query {
 
  mutation {
   createUser(UserInput: {
-    name: "Oscar Botta",
-    email: "o.botta@gmail.com",
+    name: "jonathan hola",
+    email: "h.hola@gmail.com",
     password: "12345"
   })
 }
