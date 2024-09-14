@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - mongo
+    environment:
+      APP_NAME: Prueba_Tecnica
+      MONGO_URI: mongodb+srv://rsannarain:rsannarain@cluster0.hikbp2g.mongodb.net/
+    command: npm run dev
+  mongo:
+    container_name: PruebaTecnica
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
