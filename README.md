@@ -9,7 +9,7 @@ base de datos en Mongo (si todo esto puede estar dockerisado, suma). En base a e
 tecnologías realizar un crud de usuario con campos ID, nombre, email, password.**
 
 
-## Configuración
+## Configuración para ejecucion desde IDE
 
 1. **Instalar dependencias**
 
@@ -25,6 +25,22 @@ tecnologías realizar un crud de usuario con campos ID, nombre, email, password.
 3. **Ejecutar el proyecto**
    ```bash
    npm run start
+
+
+## Configuración para ejecucion desde Docker
+
+1. **Descarga la imagen de un contenedor desde un repositorio**
+   ```bash
+   docker pull rainramira/app-1:latest
+
+2. **Ejecuta la imagen descargada como un contenedor**
+   ```bash
+   docker run -d -p 4000:4000 --name pepe rainramira/app-1:latest
+
+3. **Lista todos los contenedores que están en ejecución en ese momento.**
+   ```bash
+   docker ps
+
 
 ## Prueba en Apollo-Server
 ```
