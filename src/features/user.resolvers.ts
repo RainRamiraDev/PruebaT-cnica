@@ -1,7 +1,7 @@
-
-
 import  User  from './user.js';
 import { UserArgs, UserInput, CreateUserArgs, UpdateUserArgs, DeleteUserArgs } from '../features/interfaces.js';
+
+
 
 export const resolvers ={
     Query:{

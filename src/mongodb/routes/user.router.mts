@@ -1,10 +1,9 @@
 import express from 'express';
-
+import { User } from '../models/user.model.mjs';
 const router = express.Router();
 
-import { User } from '../models/user.model.mjs';
 
-
+//Ruta para obtener todos los usuarios
 router.get('/getUsers',async (req,res) => {
     try{
         const data = await User.find({});
@@ -16,7 +15,7 @@ router.get('/getUsers',async (req,res) => {
     }
 });
 
-
+//Ruta para ingresar un nuevo usuario
 router.post('/addUser',async (req,res) =>{
     try{
         const data = await User.create(req.body);
@@ -27,6 +26,7 @@ router.post('/addUser',async (req,res) =>{
     }
 });
 
+//Ruta para obtener un usuario por Id
 router.get('/:id',async (req,res) =>{
     try{
         const data = await User.findById(req.params.id);

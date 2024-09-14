@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+
+//Definicion del esquema del modelo de usuario
 const userSchema = new mongoose.Schema({
     ID:Number,
     name: String,
@@ -8,5 +10,4 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User',userSchema);
-
 export{ User };

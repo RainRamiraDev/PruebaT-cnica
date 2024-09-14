@@ -1,6 +1,7 @@
-
 import {Types} from 'mongoose';
 
+
+//Definicion de interfaces para Resolvers
  export interface UserArgs {
     ID: string;
   }
@@ -24,6 +25,8 @@ import {Types} from 'mongoose';
     ID: string;
   }
 
+
+ //Definicion de interfaces para User
 export interface IUser {
     _id?: Types.ObjectId;
     name?:String,
