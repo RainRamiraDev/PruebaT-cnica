@@ -37,7 +37,7 @@ tecnologías realizar un crud de usuario con campos ID, nombre, email, password.
    ```bash
    docker run -d -p 4000:4000 --name pepe rainramira/app-1:latest
 
-3. **Lista todos los contenedores que están en ejecución en ese momento.**
+3. **Lista los contenedores activos**
    ```bash
    docker ps
 
