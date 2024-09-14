@@ -32,7 +32,7 @@ tecnologías realizar un crud de usuario con campos ID, nombre, email, password.
 
 
 query {
-  getUser(ID: "60c72b2f9b1e4d001c9e7b9e") {
+  getUser(ID: "66e3be140641e70a24eb724f") {
     _id
     name
     email
@@ -68,7 +68,7 @@ query {
 
 
 mutation {
-  deleteUser(ID: "60c72b2f9b1e4d001c9e7b9e")
+  deleteUser(ID: "66e3be140641e70a24eb724f")
 }
 
 
@@ -76,7 +76,7 @@ mutation {
 
 
 mutation {
-  updateUser(ID: "60c72b2f9b1e4d001c9e7b9e", UserInput: {
+  updateUser(ID: "66e3be140641e70a24eb724f", UserInput: {
     name: "Rain Ramira",
     email: "r.sannarain@gmail.com",
     password: "newpassword123"
