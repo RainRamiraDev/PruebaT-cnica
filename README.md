@@ -9,27 +9,6 @@ base de datos en Mongo (si todo esto puede estar dockerisado, suma). En base a e
 tecnologías realizar un crud de usuario con campos ID, nombre, email, password.**
 
 
-## Estructura del Proyecto
-
-- .
-- ├── desktop.ini
-- ├── dist
-- │   ├── app.mjs
-- │   ├── app.mjs.map
-- │   ├── features
-- │   └── mongodb
-- ├── docker-compose.yml
-- ├── Dockerfile
-- ├── node_modules
-- ├── package.json
-- ├── package-lock.json
-- ├── README.md
-- ├── src
-- │   ├── app.mts
-- │   ├── features
-- │   └── mongodb
-- └── tsconfig.json
-
 ## Configuración
 
 1. **Instalar dependencias**
